@@ -24,6 +24,8 @@ mkdir certs
 
 openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key -x509 -days 365 -out certs/domain.crt
 
+docker swarm init
+
 docker secret create revprox_cert certs/domain.crt
 
 docker secret create revprox_key certs/domain.key
@@ -44,22 +46,6 @@ To run the AtSea shop as an application:
 docker-compose up --build
 ```
 
-## Deploy to a swarm
-```
-#If you need to create a Swarm
-docker swarm init
-docker stack deploy -c docker-stack.yml atsea
-```
-
-## A simplified development environment
-This compose file creates a simplified development environment consisting of only the application server and the database.
-
-```
-docker-compose --file docker-compose-dev.yml up --build
-```
-
-
-
 ## The AtSea Shop 
 
 The URL for the content is `http://localhost:8080/`
@@ -67,5 +53,3 @@ The URL for the content is `http://localhost:8080/`
 # REST API
 
 Documentation for REST calls: [REST API](./REST.md)
-
-
