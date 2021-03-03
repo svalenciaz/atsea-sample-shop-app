@@ -39,16 +39,15 @@ To create a secret for staging the payment gateway:
 echo staging | docker secret create staging_token - 
 ```
 
-## Run as an application
+## Run application
 
 To run the AtSea shop as an application:
 ```
 docker-compose up --build
 ```
 
-## The AtSea Shop 
-
 The URL for the content is `http://localhost:8080/`
+
 
 # REST API
 
