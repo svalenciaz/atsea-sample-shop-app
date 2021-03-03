@@ -20,6 +20,7 @@ site.conf
 *.bak
 linux.md
 src/
+certs/
 
 ###################
 *.com
