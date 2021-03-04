@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        docker_context: [./app, ./database, ./reverse_proxy, ./payment_gateway]
+        docker_context: [app, database, reverse_proxy, payment_gateway]
 
     steps:
 
@@ -29,9 +29,9 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ${{ matrix.docker_context }}
+          context: ./${{ matrix.docker_context }}
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/atsea-sample-shop-app:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/atsea-sample-shop-${{ matrix.docker_context }}:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
