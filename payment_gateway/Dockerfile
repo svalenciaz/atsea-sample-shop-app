@@ -1,6 +1,6 @@
 from alpine
 
-RUN adduser -D payment
-USER payment
-COPY process.sh /home/payment/process.sh
-CMD /home/payment/process.sh
+RUN mkdir /praxis
+RUN mkdir /praxis/payment
+COPY ./process.sh /praxis/payment/process.sh
+CMD /praxis/payment/process.sh
