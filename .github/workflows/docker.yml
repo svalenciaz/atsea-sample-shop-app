@@ -1,0 +1,16 @@
+name: Docker
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  docker:
+
+    runs-on: ubuntu-latest
+
+    name: build-and-push-docker-images
+
+    steps: 
+    - 
+
