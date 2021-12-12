@@ -57,7 +57,7 @@ public class UnitTest {
 	OrderServiceImpl mockOrderServiceImpl = new OrderServiceImpl();
 	
 	// Mock customer
-	public Customer returnCustomer = new Customer(1L, "Arthur Dent", "Dockerland", "ad@null.com", "415-555-5555",
+	public Customer returnCustomer = new Customer(1L, "Arthur Dent", "Dockerland", "ad@test.com", "415-555-5555",
 			"arthurd", "docker!", true, "ADMIN");
 	
 	// Mock product
